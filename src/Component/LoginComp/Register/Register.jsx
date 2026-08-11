@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../styles/Auth.css';
+import '../Styles/Auth.css';
 import RoleSelector from '../RoleSelector/RoleSelector';
 import { FaGraduationCap } from "react-icons/fa";
 import { registerUser } from '../../../firebase/auth';
