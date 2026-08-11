@@ -3,7 +3,7 @@ import { FiKey, FiCloud, FiActivity } from 'react-icons/fi';
 import { BiPen } from 'react-icons/bi';
 import { RiRobot2Line } from 'react-icons/ri';
 import { IoLeafOutline } from 'react-icons/io5';
-import './About.css';
+import './about.css';
 
 const About = () => {
   const features = [
