@@ -3,7 +3,6 @@ import { Link, useLocation } from 'react-router-dom';
 import { FaGraduationCap, FaBars, FaTimes } from "react-icons/fa";
 import './navBar.css';
 import smartLogo from "../../../assets/smartLogo.jpg"
-import { Link } from 'react-router-dom';
 
 function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
