@@ -1,7 +1,6 @@
 import React from 'react'
 import Register from '../../Component/LoginComp/Register/Register'
 
-
 function SignUp() {
   return (
     

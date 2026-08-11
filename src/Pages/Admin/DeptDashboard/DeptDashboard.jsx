@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Outlet, Navigate } from 'react-router-dom';
 import DeptSidebar from "./DeptSidebar";
 import AdminHeader from '../../../Component/DashboardComponents/AdminComponent/AdminHeader/AdminHeader';
-import './DeptDashboard.css';
+import './deptDashboard.css';
 
 const DeptDashboard = ({ dept, adminType }) => {
   // Verify the logged-in user actually belongs to this department

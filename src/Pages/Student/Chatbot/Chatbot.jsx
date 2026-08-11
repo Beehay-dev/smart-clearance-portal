@@ -13,7 +13,7 @@ import {
   FaSpinner,
   FaUser,
 } from 'react-icons/fa';
-import './Chatbot.css';
+import './chatbot.css';
 import { toast } from 'react-toastify';
 
 const Chatbot = () => {
