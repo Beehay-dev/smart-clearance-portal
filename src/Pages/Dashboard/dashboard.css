@@ -1,0 +1,50 @@
+.dashboard-root {
+  font-family: "Public Sans", sans-serif;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #f5f5f5;
+  /* Contain the layout to the viewport so only .dashboard-main scrolls,
+     matching the admin/dept dashboard shells. Without this, the sidebar's
+     own height can push the whole page taller than 100vh and cause the
+     page itself to scroll instead of just the content area. */
+  overflow: hidden;
+}
+
+/*
+  NOTE: the old .dashboard-header / .header-left / .logo-icon / .avatar
+  rules that used to live here have been removed. They duplicated the
+  class name ".dashboard-header" used by header.css (which actually
+  styles the real <Header /> component), and since plain CSS imports
+  aren't scoped, whichever file loaded last was silently overriding the
+  other's padding. .logo-icon / .avatar were also dead code — Header.jsx
+  doesn't use those classes at all. If you need this file to hold layout
+  overrides for the header in the future, give them a distinct class name
+  instead of reusing "dashboard-header".
+*/
+
+.dashboard-body {
+  width: 100%;
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.dashboard-main {
+  flex: 1;
+  overflow-y: auto;
+  box-sizing: border-box;
+  /* No padding here on purpose — page components (overview-page,
+     bursary-page, etc.) each define their own responsive padding.
+     Adding padding here too was stacking with theirs and doubling the
+     gutter on mobile. */
+}
+
+.welcome-text {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #111418;
+  max-width: 720px;
+  line-height: 1.5;
+}

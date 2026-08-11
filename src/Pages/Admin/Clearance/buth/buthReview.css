@@ -1,0 +1,158 @@
+@import '../bursary/bursaryReview.css';
+@import '../hod/hodReview.css';
+
+/* BUTH-specific customizations */
+.buth-review-page {
+  padding: 2rem;
+  background: var(--bg-cream);
+  min-height: 100vh;
+}
+
+/* Medical Records Summary */
+.medical-records-summary {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.medical-records-summary h4 {
+  margin: 0 0 1rem 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-charcoal);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.medical-records-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  padding: 1.25rem;
+  background: var(--bg-cream);
+  border-radius: 8px;
+}
+
+.medical-record-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.record-label {
+  font-size: 0.75rem;
+  color: var(--text-light);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.record-value {
+  font-size: 0.95rem;
+  color: var(--text-charcoal);
+  font-weight: 600;
+}
+
+/* Medical Services Section */
+.medical-services-section {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.medical-services-section h4 {
+  margin: 0 0 1rem 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-charcoal);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.services-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.service-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--bg-cream);
+  border-radius: 8px;
+  border-left: 3px solid #3b82f6;
+}
+
+.service-info {
+  flex: 1;
+}
+
+.service-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-charcoal);
+  margin-bottom: 0.25rem;
+}
+
+.service-meta {
+  font-size: 0.8rem;
+  color: var(--text-light);
+}
+
+.service-cost {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-charcoal);
+}
+
+.service-status {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.service-status.completed {
+  background: var(--success-light);
+  color: var(--success-green);
+}
+
+.service-status.pending_payment {
+  background: var(--danger-light);
+  color: var(--danger-red);
+}
+
+/* Document Category (BUTH specific styling) */
+.doc-category {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #ef4444;
+  background: #fee2e2;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  margin-bottom: 0.3rem;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .medical-records-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

@@ -1,0 +1,378 @@
+/* Base Skeleton Styles */
+.skeleton-shimmer {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    #f0f0f0 0%,
+    #e0e0e0 20%,
+    #f0f0f0 40%,
+    #f0f0f0 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: inherit;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Card Skeleton */
+.skeleton-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+/* Table Row Skeleton */
+.skeleton-table-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
+  margin-bottom: 0.75rem;
+}
+
+.skeleton-cell {
+  height: 20px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+/* Stat Card Skeleton */
+.skeleton-stat-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.skeleton-stat-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.skeleton-stat-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.skeleton-stat-value {
+  width: 60px;
+  height: 32px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.skeleton-stat-label {
+  width: 100px;
+  height: 16px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+/* Notification Skeleton */
+.skeleton-notification {
+  background: white;
+  padding: 1.25rem;
+  border-radius: 12px;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.skeleton-notif-checkbox {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 0.25rem;
+}
+
+.skeleton-notif-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.skeleton-notif-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.skeleton-notif-title {
+  width: 60%;
+  height: 18px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.skeleton-notif-message {
+  width: 100%;
+  height: 14px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.skeleton-notif-message.short {
+  width: 70%;
+}
+
+/* Document Card Skeleton */
+.skeleton-document {
+  background: white;
+  padding: 1rem;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.skeleton-doc-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.skeleton-doc-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.skeleton-doc-name {
+  width: 70%;
+  height: 18px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.skeleton-doc-meta {
+  width: 50%;
+  height: 14px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.skeleton-doc-status {
+  width: 80px;
+  height: 28px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+/* Clearance Card Skeleton */
+.skeleton-clearance-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.skeleton-clearance-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.skeleton-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.skeleton-student-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.skeleton-name {
+  width: 150px;
+  height: 20px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.skeleton-meta {
+  width: 200px;
+  height: 14px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.skeleton-badge {
+  width: 100px;
+  height: 28px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.skeleton-clearance-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.skeleton-detail-row {
+  width: 100%;
+  height: 16px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+/* Student Row Skeleton */
+.skeleton-student-row {
+  display: grid;
+  grid-template-columns: 50px 1fr 120px 150px 100px 150px 100px;
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
+  margin-bottom: 0.75rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.skeleton-student-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.skeleton-student-name,
+.skeleton-student-matric,
+.skeleton-student-dept,
+.skeleton-student-status,
+.skeleton-student-actions {
+  height: 16px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.skeleton-student-progress {
+  height: 24px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+/* Overview Card Skeleton */
+.skeleton-overview-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.skeleton-card-header {
+  width: 40%;
+  height: 20px;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.skeleton-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.skeleton-content-line {
+  width: 100%;
+  height: 16px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.skeleton-content-line.short {
+  width: 60%;
+}
+
+/* Activity Skeleton */
+.skeleton-activity {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
+  margin-bottom: 0.75rem;
+}
+
+.skeleton-activity-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.skeleton-activity-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.skeleton-activity-title {
+  width: 70%;
+  height: 16px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.skeleton-activity-time {
+  width: 40%;
+  height: 12px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .skeleton-student-row {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .skeleton-stat-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .skeleton-stat-icon {
+    margin: 0 auto;
+  }
+}

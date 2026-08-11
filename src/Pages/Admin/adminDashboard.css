@@ -1,0 +1,38 @@
+.admin-dashboard-root {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  background: #f8f8f8;
+}
+
+.admin-dashboard-body {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.admin-dashboard-main {
+  flex: 1;
+  overflow-y: auto;
+  background: #f8f8f8;
+  
+}
+
+/* Scrollbar styling */
+.admin-dashboard-main::-webkit-scrollbar {
+  width: 8px;
+}
+
+.admin-dashboard-main::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.admin-dashboard-main::-webkit-scrollbar-thumb {
+  background: #c89b00;
+  border-radius: 4px;
+}
+
+.admin-dashboard-main::-webkit-scrollbar-thumb:hover {
+  background: #b08900;
+}

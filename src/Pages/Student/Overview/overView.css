@@ -1,0 +1,456 @@
+:root {
+  --primary-gold: #c89b00;
+  --primary-gold-hover: #b08900;
+  --primary-gold-light: rgba(200, 155, 0, 0.1);
+  --bg-cream: #f8f8f8;
+  --text-charcoal: #2c3e50;
+  --text-light: #7f8c8d;
+  
+  --success-green: #10b981;
+  --success-light: #d1fae5;
+  --warning-yellow: #f59e0b;
+  --warning-light: #fef3c7;
+  --danger-red: #ef4444;
+  --danger-light: #fee2e2;
+}
+
+.overview-page {
+  padding: 1.75rem;
+  background: var(--bg-cream);
+  /* NOT 100vh — this is nested inside .dashboard-main, which already
+     handles scrolling for the whole content area. Forcing another full
+     viewport height on top of that just adds unnecessary extra scroll
+     length instead of simply filling the space it's given. */
+  min-height: 100%;
+}
+
+/* Welcome Section */
+.welcome-section {
+  background: white;
+  border-radius: 12px;
+  padding: 1.75rem 2rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  border-left: 4px solid var(--primary-gold);
+}
+
+.welcome-text h1 {
+  margin: 0 0 0.35rem 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-charcoal);
+  letter-spacing: -0.01em;
+}
+
+.welcome-text p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
+.stats-summary {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-value {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--primary-gold);
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+}
+
+.stat-divider {
+  width: 1px;
+  height: 2.5rem;
+  background: #e5e7eb;
+}
+
+/* Main Content Layout */
+.overview-content {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 1.5rem;
+}
+
+.overview-main {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.overview-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Card Styles */
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.2s;
+}
+
+.card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  margin-bottom: 1.25rem;
+}
+
+.card-header h3 {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-charcoal);
+}
+
+.card-subtitle {
+  font-size: 0.8rem;
+  color: var(--text-light);
+}
+
+/* Chart Card */
+.chart-card {
+  padding: 1.5rem 1.75rem 1.25rem;
+}
+
+.chart-wrapper {
+  width: 100%;
+  height: 280px;
+}
+
+/* Departments Card */
+.department-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.department-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  background: var(--bg-cream);
+  border-radius: 10px;
+  border-left: 3px solid transparent;
+  transition: all 0.2s;
+}
+
+.department-item:hover {
+  background: #f3f4f6;
+  transform: translateX(4px);
+}
+
+.dept-approved {
+  border-left-color: var(--success-green);
+}
+
+.dept-pending {
+  border-left-color: var(--text-light);
+}
+
+.dept-submitted {
+  border-left-color: var(--primary-gold);
+}
+
+.dept-not_started {
+  border-left-color: #e5e7eb;
+}
+
+.dept-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.dept-icon-wrapper {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+.dept-approved .dept-icon-wrapper {
+  color: var(--success-green);
+  background: var(--success-light);
+}
+
+.dept-pending .dept-icon-wrapper {
+  color: var(--text-light);
+  background: #f3f4f6;
+}
+
+.dept-submitted .dept-icon-wrapper {
+  color: var(--primary-gold);
+  background: var(--primary-gold-light);
+}
+
+.dept-not_started .dept-icon-wrapper {
+  color: #9ca3af;
+  background: #f9fafb;
+}
+
+.dept-info h4 {
+  margin: 0 0 0.2rem 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-charcoal);
+}
+
+.dept-meta {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--text-light);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.separator {
+  color: #d1d5db;
+}
+
+/* Status Badges */
+.status-badge {
+  display: inline-block;
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.status-rejected {
+  background: #fee2e2;
+  color: #ef4444;
+}
+
+.dept-rejected {
+  border-left-color: #ef4444;
+}
+
+.status-approved {
+  background: var(--success-light);
+  color: #065f46;
+}
+
+.status-pending {
+  background: #f3f4f6;
+  color: #4b5563;
+}
+
+.status-submitted {
+  background: var(--primary-gold-light);
+  color: var(--primary-gold-hover);
+}
+
+.status-not-started {
+  background: #f9fafb;
+  color: #9ca3af;
+}
+
+/* Notifications */
+.notifications-card {
+  padding: 1.25rem;
+}
+
+.notification-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.notification-item {
+  display: flex;
+  gap: 0.85rem;
+  padding: 0.85rem;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.notification-item:hover {
+  background: var(--bg-cream);
+}
+
+.notif-icon {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+.notif-success {
+  background: var(--success-light);
+  color: var(--success-green);
+}
+
+.notif-pending {
+  background: #f3f4f6;
+  color: var(--text-light);
+}
+
+.notif-warning {
+  background: var(--primary-gold-light);
+  color: var(--primary-gold);
+}
+
+.notif-content {
+  flex: 1;
+}
+
+.notif-text {
+  margin: 0 0 0.25rem 0;
+  font-size: 0.85rem;
+  color: var(--text-charcoal);
+  line-height: 1.4;
+}
+
+.notif-time {
+  font-size: 0.75rem;
+  color: var(--text-light);
+}
+
+/* Quick Actions */
+.quick-actions-card {
+  padding: 1.25rem;
+}
+
+.action-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.action-item {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.9rem 1rem;
+  background: var(--bg-cream);
+  border: 1px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-charcoal);
+  transition: all 0.2s;
+  text-align: left;
+}
+
+.action-item:hover {
+  background: white;
+  border-color: var(--primary-gold);
+  transform: translateX(4px);
+}
+
+.action-icon {
+  font-size: 1rem;
+  color: var(--primary-gold);
+}
+
+/* Buttons */
+.btn-text {
+  width: 100%;
+  padding: 0.65rem;
+  background: transparent;
+  border: none;
+  color: var(--primary-gold);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+.btn-text:hover {
+  background: var(--primary-gold-light);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .overview-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .overview-sidebar {
+    grid-column: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .overview-page {
+    padding: 1rem;
+  }
+  
+  .welcome-section {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
+  }
+  
+  .stats-summary {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .welcome-text h1 {
+    font-size: 1.3rem;
+  }
+  
+  .card {
+    padding: 1.25rem;
+  }
+  
+  .department-item {
+    padding: 0.85rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-summary {
+    gap: 1rem;
+  }
+  
+  .stat-value {
+    font-size: 1.5rem;
+  }
+  
+  .stat-label {
+    font-size: 0.7rem;
+  }
+}

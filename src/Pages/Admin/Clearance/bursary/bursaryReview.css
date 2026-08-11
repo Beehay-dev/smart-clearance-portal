@@ -1,0 +1,755 @@
+:root {
+  --primary-gold: #c89b00;
+  --primary-gold-hover: #b08900;
+  --primary-gold-light: rgba(200, 155, 0, 0.1);
+  --bg-cream: #f8f8f8;
+  --text-charcoal: #2c3e50;
+  --text-light: #7f8c8d;
+  --success-green: #10b981;
+  --success-light: #d1fae5;
+  --danger-red: #ef4444;
+  --danger-light: #fee2e2;
+  --pending-blue: #3b82f6;
+  --pending-light: #dbeafe;
+}
+
+.bursary-review-page {
+  padding: 2rem;
+  background: var(--bg-cream);
+  min-height: 100vh;
+}
+
+/* Page Header */
+.review-page-header {
+  margin-bottom: 2rem;
+}
+
+.review-page-header h1 {
+  margin: 0 0 0.5rem 0;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-charcoal);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.review-page-header p {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--text-light);
+}
+
+/* Statistics */
+.review-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.review-stat-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  border-left: 4px solid var(--primary-gold);
+  transition: all 0.2s;
+}
+
+.review-stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.stat-pending {
+  border-left-color: var(--pending-blue);
+}
+
+.stat-approved {
+  border-left-color: var(--success-green);
+}
+
+.stat-rejected {
+  border-left-color: var(--danger-red);
+}
+
+.review-stat-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-charcoal);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.review-stat-label {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  font-weight: 500;
+}
+
+/* Controls */
+.review-controls {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.search-box {
+  flex: 1;
+  min-width: 300px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: var(--bg-cream);
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+
+.search-box svg {
+  color: var(--text-light);
+  font-size: 1rem;
+}
+
+.search-box input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: 0.95rem;
+  color: var(--text-charcoal);
+  outline: none;
+}
+
+.search-box input::placeholder {
+  color: var(--text-light);
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.filter-btn {
+  padding: 0.75rem 1.25rem;
+  background: var(--bg-cream);
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  color: var(--text-charcoal);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.filter-btn:hover {
+  background: white;
+  border-color: var(--primary-gold);
+}
+
+.filter-btn.active {
+  background: var(--primary-gold);
+  border-color: var(--primary-gold);
+  color: white;
+}
+
+/* Students List */
+.students-review-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.student-review-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: all 0.2s;
+}
+
+.student-review-card:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.student-review-header {
+  padding: 1.5rem;
+  background: var(--bg-cream);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.student-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.student-avatar {
+  width: 50px;
+  height: 50px;
+  background: var(--primary-gold-light);
+  color: var(--primary-gold);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+.student-info h3 {
+  margin: 0 0 0.3rem 0;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-charcoal);
+}
+
+.student-meta {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.separator {
+  color: #d1d5db;
+}
+
+.status-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.status-pending {
+  background: var(--pending-light);
+  color: var(--pending-blue);
+}
+
+.status-approved {
+  background: var(--success-light);
+  color: var(--success-green);
+}
+
+.status-rejected {
+  background: var(--danger-light);
+  color: var(--danger-red);
+}
+
+.student-review-body {
+  padding: 1.5rem;
+}
+
+.review-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.review-info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.info-label {
+  font-size: 0.8rem;
+  color: var(--text-light);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.info-value {
+  font-size: 0.95rem;
+  color: var(--text-charcoal);
+  font-weight: 600;
+}
+
+.balance-clear {
+  color: var(--success-green);
+}
+
+.balance-debt {
+  color: var(--danger-red);
+}
+
+.info-value.urgent {
+  color: var(--danger-red);
+}
+
+/* Documents Section */
+.documents-section {
+  margin-bottom: 1.5rem;
+}
+
+.documents-section h4 {
+  margin: 0 0 1rem 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-charcoal);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.documents-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.document-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--bg-cream);
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.document-card:hover {
+  background: #f3f4f6;
+}
+
+.doc-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary-gold-light);
+  color: var(--primary-gold);
+  border-radius: 8px;
+  font-size: 1.1rem;
+}
+
+.doc-info {
+  flex: 1;
+}
+
+.doc-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-charcoal);
+  margin-bottom: 0.25rem;
+}
+
+.doc-meta {
+  font-size: 0.8rem;
+  color: var(--text-light);
+}
+
+.doc-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.doc-action-btn {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  color: var(--text-light);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.doc-action-btn:hover {
+  background: var(--primary-gold-light);
+  border-color: var(--primary-gold);
+  color: var(--primary-gold);
+}
+
+/* Last Comment */
+.last-comment {
+  display: flex;
+  gap: 0.75rem;
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.comment-approved {
+  background: var(--success-light);
+  color: var(--success-green);
+  border-left: 3px solid var(--success-green);
+}
+
+.comment-rejected {
+  background: var(--danger-light);
+  color: var(--danger-red);
+  border-left: 3px solid var(--danger-red);
+}
+
+/* Action Buttons */
+.student-review-actions {
+  display: flex;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: var(--bg-cream);
+  border-top: 1px solid #e5e7eb;
+}
+
+.btn-approve,
+.btn-reject {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-approve {
+  background: var(--success-green);
+  color: white;
+}
+
+.btn-approve:hover {
+  background: #059669;
+  transform: translateY(-2px);
+}
+
+.btn-reject {
+  background: var(--danger-red);
+  color: white;
+}
+
+.btn-reject:hover {
+  background: #dc2626;
+  transform: translateY(-2px);
+}
+
+.btn-approve:disabled,
+.btn-reject:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Approval/Rejection Info */
+.approval-info,
+.rejection-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.5rem;
+  background: var(--bg-cream);
+  border-top: 1px solid #e5e7eb;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.approval-info {
+  color: var(--success-green);
+}
+
+.rejection-info {
+  color: var(--danger-red);
+}
+
+.approval-icon,
+.rejection-icon {
+  font-size: 1.2rem;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.modal-header h3 {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--text-charcoal);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.modal-close {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  font-size: 1.75rem;
+  color: var(--text-light);
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+.modal-close:hover {
+  background: var(--bg-cream);
+  color: var(--text-charcoal);
+}
+
+.modal-body {
+  padding: 1.5rem;
+}
+
+.modal-student-info {
+  background: var(--bg-cream);
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.modal-student-info p {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  color: var(--text-charcoal);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-charcoal);
+}
+
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-family: inherit;
+  resize: vertical;
+  transition: all 0.2s;
+}
+
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary-gold);
+  box-shadow: 0 0 0 3px var(--primary-gold-light);
+}
+
+.approval-notice,
+.rejection-notice {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.approval-notice {
+  background: var(--success-light);
+  color: var(--success-green);
+}
+
+.rejection-notice {
+  background: var(--danger-light);
+  color: var(--danger-red);
+}
+
+.approval-notice p,
+.rejection-notice p {
+  margin: 0;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  padding: 1.5rem;
+  border-top: 1px solid #f3f4f6;
+}
+
+.btn-cancel {
+  padding: 0.75rem 1.5rem;
+  background: var(--bg-cream);
+  color: var(--text-charcoal);
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-cancel:hover {
+  background: #e5e7eb;
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: white;
+  border-radius: 12px;
+}
+
+.empty-icon {
+  font-size: 4rem;
+  color: var(--text-light);
+  opacity: 0.3;
+  margin-bottom: 1.5rem;
+}
+
+.empty-state h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--text-charcoal);
+}
+
+.empty-state p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--text-light);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .review-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .bursary-review-page {
+    padding: 1rem;
+  }
+
+  .review-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .review-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-box {
+    min-width: 100%;
+  }
+
+  .filter-buttons {
+    flex-wrap: wrap;
+  }
+
+  .review-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .student-review-actions {
+    flex-direction: column;
+  }
+}
+
+/* Loading Container */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  gap: 1rem;
+}
+
+.spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid #f3f4f6;
+  border-top-color: #c89b00;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.loading-container p {
+  color: #7f8c8d;
+  font-size: 0.95rem;
+}
+
+/* Button Spinner */
+.btn-spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+
+/* Comment Meta */
+.comment-meta {
+  font-size: 0.75rem;
+  color: #7f8c8d;
+  margin-top: 0.25rem;
+}

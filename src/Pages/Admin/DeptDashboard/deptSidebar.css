@@ -1,0 +1,339 @@
+.dept-sidebar {
+  width: 260px;
+  min-height: calc(100vh - 60px);
+  background: white;
+  border-right: 1px solid #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.04);
+  flex-shrink: 0;
+}
+
+/* Header */
+.dept-sidebar-header {
+  padding: 1.25rem 1rem;
+  border-bottom: 1px solid #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.dept-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  min-width: 0;
+}
+
+/* Close (X) button inside the drawer header — hidden on desktop.
+   The button that OPENS the drawer lives in AdminHeader
+   (.admin-mobile-menu-btn), not in this component. */
+.dept-sidebar-close {
+  display: none;
+  width: 32px;
+  height: 32px;
+  align-items: center;
+  justify-content: center;
+  background: #f8f8f8;
+  border: none;
+  border-radius: 8px;
+  color: #7f8c8d;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* Backdrop shown behind the drawer on mobile */
+.dept-sidebar-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 899;
+}
+
+/* Nav */
+.dept-sidebar-nav {
+  flex: 1;
+  padding: 1rem 0.75rem;
+  overflow-y: auto;
+}
+
+.dept-sidebar-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.dept-sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  padding: 0.875rem 1rem;
+  border-radius: 10px;
+  color: #7f8c8d;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  width: 100%;
+}
+
+.dept-sidebar-item:hover {
+  background: #f8f8f8;
+  color: #2c3e50;
+}
+
+.dept-sidebar-item.active {
+  background: rgba(200, 155, 0, 0.1);
+  color: #c89b00;
+  font-weight: 600;
+}
+
+.dept-sidebar-icon {
+  font-size: 1.1rem;
+  width: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.dept-sidebar-label {
+  flex: 1;
+}
+
+.dept-sidebar-badge {
+  background: #ef4444;
+  color: white;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.2rem 0.55rem;
+  border-radius: 20px;
+  min-width: 20px;
+  text-align: center;
+}
+
+/* Footer */
+.dept-sidebar-footer {
+  padding: 1rem;
+  border-top: 1px solid #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.dept-sidebar-user {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.dept-user-avatar {
+  width: 36px;
+  height: 36px;
+  background: rgba(200, 155, 0, 0.1);
+  color: #c89b00;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.dept-user-info { min-width: 0; }
+
+.dept-user-name {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #2c3e50;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dept-user-role {
+  font-size: 0.72rem;
+  color: #7f8c8d;
+  margin-top: 0.1rem;
+}
+
+.dept-sidebar-actions {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.dept-action-btn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8f8f8;
+  border: none;
+  border-radius: 8px;
+  color: #7f8c8d;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 0.9rem;
+}
+
+.dept-action-btn:hover {
+  background: #f0f0f0;
+  color: #2c3e50;
+}
+
+.dept-logout-btn:hover {
+  background: #fee2e2;
+  color: #ef4444;
+}
+
+/* Logout Modal */
+.dept-logout-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.dept-logout-modal {
+  background: white;
+  border-radius: 14px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 380px;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.dept-logout-modal h3 {
+  margin: 0 0 0.75rem 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #2c3e50;
+}
+
+.dept-logout-modal p {
+  margin: 0 0 1.5rem 0;
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  line-height: 1.6;
+}
+
+.dept-logout-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.dept-btn-cancel {
+  flex: 1;
+  padding: 0.75rem;
+  background: #f8f8f8;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #2c3e50;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.dept-btn-cancel:hover { background: #f0f0f0; }
+
+.dept-btn-confirm {
+  flex: 1;
+  padding: 0.75rem;
+  background: #ef4444;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.dept-btn-confirm:hover { background: #dc2626; }
+
+/* ============================================
+   Responsive
+   ============================================ */
+
+/* Tablet: keep the sidebar static and visible, just narrower */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .dept-sidebar {
+    width: 220px;
+  }
+}
+
+/* Mobile: sidebar becomes an off-canvas drawer, opened via
+   AdminHeader's hamburger button */
+@media (max-width: 768px) {
+  .dept-sidebar-close {
+    display: flex;
+  }
+
+  .dept-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    min-height: 100vh;
+    width: min(280px, 82vw);
+    max-width: 320px;
+    z-index: 950;
+    transform: translateX(-100%);
+    transition: transform 0.28s ease;
+    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.18);
+  }
+
+  .dept-sidebar.mobile-open {
+    transform: translateX(0);
+  }
+
+  /* Give the badge room to shrink instead of colliding with the close button */
+  .dept-badge span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+/* Small phones: tighten padding/typography a bit further */
+@media (max-width: 400px) {
+  .dept-sidebar {
+    width: 86vw;
+  }
+
+  .dept-sidebar-header {
+    padding: 1rem 0.75rem;
+  }
+
+  .dept-badge {
+    padding: 0.65rem 0.85rem;
+    font-size: 0.85rem;
+  }
+
+  .dept-logout-modal {
+    padding: 1.5rem;
+  }
+}

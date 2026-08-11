@@ -1,0 +1,121 @@
+@import '../bursary/bursaryReview.css';
+
+/* HOD-specific customizations */
+.hod-review-page {
+  padding: 2rem;
+  background: var(--bg-cream);
+  min-height: 100vh;
+}
+
+/* Requirements Section */
+.requirements-section {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.requirements-section h4 {
+  margin: 0 0 1rem 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-charcoal);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.requirements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.requirement-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: var(--bg-cream);
+  border-radius: 8px;
+  border-left: 3px solid;
+  transition: all 0.2s;
+}
+
+.requirement-item:hover {
+  background: #f3f4f6;
+}
+
+.req-completed {
+  border-left-color: var(--success-green);
+}
+
+.req-pending {
+  border-left-color: var(--pending-blue);
+}
+
+.req-not-started {
+  border-left-color: var(--danger-red);
+}
+
+.req-icon {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.req-completed .req-icon {
+  background: var(--success-light);
+  color: var(--success-green);
+}
+
+.req-pending .req-icon {
+  background: var(--pending-light);
+  color: var(--pending-blue);
+}
+
+.req-not-started .req-icon {
+  background: var(--danger-light);
+  color: var(--danger-red);
+}
+
+.req-content {
+  flex: 1;
+}
+
+.req-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-charcoal);
+  margin-bottom: 0.25rem;
+}
+
+.req-progress {
+  font-size: 0.8rem;
+  color: var(--text-light);
+}
+
+/* Document Category Tag */
+.doc-category {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #8b5cf6;
+  background: #ede9fe;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  margin-bottom: 0.3rem;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .requirements-grid {
+    grid-template-columns: 1fr;
+  }
+}

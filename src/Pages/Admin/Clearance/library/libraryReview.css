@@ -1,0 +1,230 @@
+@import '../bursary/bursaryReview.css';
+
+/* Library-specific customizations */
+.library-review-page {
+  padding: 2rem;
+  background: var(--bg-cream);
+  min-height: 100vh;
+}
+
+/* Library Summary Cards */
+.library-summary {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.summary-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--bg-cream);
+  border-radius: 8px;
+}
+
+.summary-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  font-size: 1.3rem;
+}
+
+.books-returned {
+  background: var(--success-light);
+  color: var(--success-green);
+}
+
+.books-overdue {
+  background: var(--danger-light);
+  color: var(--danger-red);
+}
+
+.fines-outstanding {
+  background: var(--warning-light);
+  color: var(--warning-yellow);
+}
+
+.fines-paid {
+  background: var(--success-light);
+  color: var(--success-green);
+}
+
+.summary-content {
+  flex: 1;
+}
+
+.summary-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-charcoal);
+  line-height: 1;
+  margin-bottom: 0.3rem;
+}
+
+.summary-value.text-danger {
+  color: var(--danger-red);
+}
+
+.summary-value.text-success {
+  color: var(--success-green);
+}
+
+.summary-label {
+  font-size: 0.75rem;
+  color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Books Section */
+.books-section {
+  margin-bottom: 1.5rem;
+}
+
+.books-section h4 {
+  margin: 0 0 1rem 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-charcoal);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.books-table {
+  overflow-x: auto;
+}
+
+.books-table table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.books-table thead {
+  background: var(--bg-cream);
+}
+
+.books-table th {
+  padding: 0.85rem;
+  text-align: left;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.books-table td {
+  padding: 1rem 0.85rem;
+  font-size: 0.85rem;
+  color: var(--text-charcoal);
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.books-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.books-table tbody tr:hover {
+  background: var(--bg-cream);
+}
+
+.book-title {
+  font-weight: 600;
+}
+
+.fine-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.fine-amount {
+  color: var(--danger-red);
+  font-weight: 600;
+}
+
+.no-fine {
+  color: var(--success-green);
+}
+
+.fine-paid-badge {
+  font-size: 0.7rem;
+  padding: 0.2rem 0.5rem;
+  background: var(--success-light);
+  color: var(--success-green);
+  border-radius: 4px;
+  font-weight: 600;
+  text-transform: uppercase;
+  width: fit-content;
+}
+
+.fine-unpaid-badge {
+  font-size: 0.7rem;
+  padding: 0.2rem 0.5rem;
+  background: var(--danger-light);
+  color: var(--danger-red);
+  border-radius: 4px;
+  font-weight: 600;
+  text-transform: uppercase;
+  width: fit-content;
+}
+
+.book-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.7rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.book-returned {
+  background: var(--success-light);
+  color: var(--success-green);
+}
+
+.book-overdue {
+  background: var(--danger-light);
+  color: var(--danger-red);
+}
+
+.book-borrowed {
+  background: var(--pending-light);
+  color: var(--pending-blue);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .library-summary {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .library-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .books-table {
+    font-size: 0.8rem;
+  }
+
+  .books-table th,
+  .books-table td {
+    padding: 0.6rem 0.5rem;
+  }
+}

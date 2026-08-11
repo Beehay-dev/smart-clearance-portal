@@ -1,0 +1,249 @@
+header {
+  width: 100%;
+  background-color: #fffaf2;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  margin: 0rem 0rem;
+}
+
+nav {
+  margin: 0 auto;
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.logo{
+  margin: 0rem 0rem 0rem 6rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  
+}
+
+.logo1 {
+  padding: 9px 10px;
+  background-color: #c89b00;
+  border-radius: 0.6rem;
+  box-shadow:
+    0 4px 6px rgba(0, 0, 0, 0.12),
+    0 8px 16px rgba(200, 155, 0, 0.35);
+}
+
+
+.logo img {
+  width: 42px;
+  height: 30px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.logo-text h2 {
+  color: #c89b00;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: justify;
+}
+
+.nav-list ul {
+  display: flex;
+  gap: 3rem;
+  list-style: none;
+}
+
+.nav-list a {
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  color: #0c0808;
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.nav-list a:hover {
+  color: #c89b00;
+}
+
+
+.nav-list a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #c89b00;
+  transition: width 0.3s ease;
+}
+
+.nav-list a:hover::after {
+  width: 100%;
+}
+
+
+.nav-buttons {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin: 0rem 3rem 0rem 0rem;
+}
+
+
+.login-btn {
+  padding: 10px 18px;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: #111827;
+  background-color: transparent;
+  /* transition: transform 0.25s ease; */
+}
+
+.login-btn:hover {
+  background-color: #c89b00;
+  border: none;
+  color: #ffffff;
+}
+
+/* START CLEARANCE BUTTON */
+.signup-btn {
+  padding: 10px 20px;
+  border-radius: 14px;
+  background-color: #c89b00;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+
+}
+
+.signup-btn:hover {
+    color: #111827;
+    background-color: transparent;
+    border: 1px solid #e5e7eb;
+
+}
+
+/* Mobile hamburger toggle — hidden by default (desktop), shown at <=1024px below */
+.nav-mobile-toggle {
+  display: none;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  color: #111827;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+/* Wraps nav-list + nav-buttons together so both can collapse into one
+   dropdown panel on mobile. On desktop this is just a normal flex row. */
+.nav-collapsible {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .logo {
+    margin-left: 1.5rem;
+  }
+
+  .nav-list ul {
+    gap: 1.75rem;
+  }
+
+  .nav-buttons {
+    margin-right: 1.5rem;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  nav {
+    padding: 14px 1.25rem;
+  }
+
+  .logo {
+    margin-left: 0;
+  }
+
+  .nav-mobile-toggle {
+    display: flex;
+  }
+
+  /* Collapse nav-list + nav-buttons into a dropdown panel under the header */
+  .nav-collapsible {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    background: #fffaf2;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    z-index: 500;
+  }
+
+  .nav-collapsible.open {
+    display: flex;
+  }
+
+  .nav-list {
+    width: 100%;
+    padding: 1rem 1.25rem 0.5rem;
+    box-sizing: border-box;
+  }
+
+  .nav-list ul {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .nav-list li {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  }
+
+  .nav-list a {
+    display: block;
+    padding: 0.9rem 0;
+  }
+
+  .nav-buttons {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+    margin: 1rem 0 1.25rem;
+    padding: 0 1.25rem;
+    box-sizing: border-box;
+  }
+
+  .login-btn,
+  .signup-btn {
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-text h2 {
+    font-size: 0.9rem;
+  }
+
+  .logo img {
+    width: 36px;
+    height: 26px;
+  }
+}
