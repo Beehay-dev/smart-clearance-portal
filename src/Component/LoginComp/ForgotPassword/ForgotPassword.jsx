@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../styles/Auth.css';
+import '../Styles/Auth.css';
 import { auth } from '../../../firebase';
 import { sendPasswordResetEmail } from 'firebase/auth';
 
