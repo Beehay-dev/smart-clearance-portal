@@ -5,6 +5,7 @@ import { FaGraduationCap } from "react-icons/fa";
 import { registerUser } from '../../../firebase/auth';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import { Link } from 'react-router-dom';
 
 const DEPARTMENT_ADMINS = [
   { label: 'Bursary',  value: 'bursary',  email: 'bursary@babcock.edu.ng',  adminType: 'bursary_admin'  },
@@ -357,7 +358,8 @@ const Register = () => {
             </button>
 
             <p className="switch-text">
-              Already have an account? <a href="/login">Sign in here</a>
+              Already have an account? <Link to="/login">Sign in here</Link>
+
             </p>
           </form>
         </div>

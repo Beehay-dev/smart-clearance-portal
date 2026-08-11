@@ -5,6 +5,7 @@ import RoleSelector from '../RoleSelector/RoleSelector';
 import { FaGraduationCap } from "react-icons/fa";
 import { loginUser } from '../../../firebase/auth';
 import { toast } from 'react-toastify';
+import { Link } from 'react-router-dom';
 
 const DEPARTMENT_ADMINS = [
   { label: 'Super Admin', value: 'super_admin', adminType: 'super_admin' },
@@ -187,14 +188,14 @@ const Login = () => {
               {errors.password && <span className="error-message">{errors.password}</span>}
             </div>
 
-            <a href="/forgot-password" className="forgot-link">Forgot Password?</a>
+            <Link to="/forgot-password" className="forgot-link">Forgot Password?</Link>
 
             <button type="submit" className="btn-primary" disabled={isLoading}>
               {isLoading ? <><span className="spinner"></span> Signing In...</> : 'Sign In'}
             </button>
 
             <p className="switch-text">
-              Don't have an account? <a href="/register">Sign up here</a>
+              Don't have an account? <Link to="/register">Sign up here</Link>
             </p>
           </form>
         </div>

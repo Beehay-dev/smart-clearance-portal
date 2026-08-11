@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import '../Styles/Auth.css';
 import { auth } from '../../../firebase';
 import { sendPasswordResetEmail } from 'firebase/auth';
+import { Link } from 'react-router-dom';
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState('');
@@ -60,9 +61,9 @@ const ForgotPassword = () => {
             <div className="success-message">
               <i className="fas fa-check-circle"></i>
               <p>Password reset link sent! Check your email.</p>
-              <a href="/login" className="btn-primary" style={{ marginTop: '20px', display: 'inline-block', textDecoration: 'none' }}>
+              <Link to="/login" className="btn-primary" style={{ marginTop: '20px', display: 'inline-block', textDecoration: 'none' }}>
                 Back to Sign In
-              </a>
+              </Link>
             </div>
           ) : (
             <form className="form-view" onSubmit={handleSubmit}>
@@ -95,9 +96,9 @@ const ForgotPassword = () => {
                 )}
               </button>
               
-              <a href="/login" className="btn-ghost" style={{ display: 'block', textDecoration: 'none', textAlign: 'center' }}>
+              <Link to="/login" className="btn-ghost" style={{ display: 'block', textDecoration: 'none', textAlign: 'center' }}>
                 ← Back to Sign In
-              </a>
+              </Link>
             </form>
           )}
         </div>

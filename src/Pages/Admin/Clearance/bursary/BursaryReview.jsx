@@ -24,6 +24,7 @@ import {
 import { doc, getDoc } from 'firebase/firestore';
 import { db } from '../../../../firebase';
 import { toast } from 'react-toastify';
+import { Link } from 'react-router-dom';
 
 const BursaryReview = () => {
   const { currentUser, userData } = useAuth();
@@ -355,25 +356,25 @@ const BursaryReview = () => {
                             </div>
                           </div>
                           <div className="doc-actions">
-                            <a
-                              href={doc.fileUrl}
+                            <Link
+                              to={doc.fileUrl}
                               target="_blank"
                               rel="noopener noreferrer"
                               className="doc-action-btn"
                               title="View"
                             >
                               <FaEye />
-                            </a>
+                            </Link>
 
-                            <a
+                            <Link
                             
-                              href={doc.fileUrl}
+                              to={doc.fileUrl}
                               download
                               className="doc-action-btn"
                               title="Download"
                             >
                               <FaDownload />
-                            </a>
+                            </Link>
                           </div>
                         </div>
                       ))}

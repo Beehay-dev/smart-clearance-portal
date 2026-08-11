@@ -12,6 +12,7 @@ import {
 import './deptOverview.css';
 import { updateClearanceStatus, createNotification } from '../../../firebase/firestore';
 import { toast } from 'react-toastify';
+import { Link } from 'react-router-dom';
 
 const DEPT_CONFIG = {
   bursary:  { label: 'Bursary',  color: '#3b82f6' },
@@ -337,14 +338,14 @@ const DeptOverview = ({ dept, filter = 'all' }) => {
                           <span className="dept-doc-size">
                             {docItem.fileSize ? `${Math.round(docItem.fileSize / 1024)} KB` : ''}
                           </span>
-                          <a 
-                            href={docItem.fileUrl}
+                          <Link 
+                            to={docItem.fileUrl}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="dept-doc-view"
                           > 
                             <FaEye /> View
-                          </a>
+                          </Link>
                         </div>
                       ))}
                     </div>

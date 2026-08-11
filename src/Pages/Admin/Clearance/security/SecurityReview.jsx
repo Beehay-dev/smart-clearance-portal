@@ -329,23 +329,23 @@ const SecurityReview = () => {
                             </div>
                           </div>
                           <div className="doc-actions">
-                            <a
-                              href={doc.fileUrl}
+                            <Link
+                              to={doc.fileUrl}
                               target="_blank"
                               rel="noopener noreferrer"
                               className="doc-action-btn"
                               title="View"
                             >
                               <FaEye />
-                            </a>
-                            <a
-                              href={doc.fileUrl}
+                            </Link>
+                            <Link
+                              to={doc.fileUrl}
                               download
                               className="doc-action-btn"
                               title="Download"
                             >
                               <FaDownload />
-                            </a>
+                            </Link>
                           </div>
                         </div>
                       ))}

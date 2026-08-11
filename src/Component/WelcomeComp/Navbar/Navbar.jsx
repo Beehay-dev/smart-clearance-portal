@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { FaGraduationCap, FaBars, FaTimes } from "react-icons/fa";
 import './navBar.css';
 import smartLogo from "../../../assets/smartLogo.jpg"
+import { Link } from 'react-router-dom';
 
 function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -34,10 +35,10 @@ function Navbar() {
         <div className={`nav-collapsible ${mobileOpen ? 'open' : ''}`}>
           <div className="nav-list">
             <ul>
-              <li><a href="./About" onClick={closeMobile}>Home</a></li>
-              <li><a href="#" onClick={closeMobile}>About</a></li>
-              <li><a href="#" onClick={closeMobile}>Contact</a></li>
-              <li><a href="#" onClick={closeMobile}>Quick Links</a></li>
+              <li><Link to="/about" onClick={closeMobile}>Home</Link></li>
+              <li><Link to="/about" onClick={closeMobile}>About</Link></li>
+              <li><Link to="/contact" onClick={closeMobile}>Contact</Link></li>
+              <li><Link to="/quick-links" onClick={closeMobile}>Quick Links</Link></li>
             </ul>
           </div>
 

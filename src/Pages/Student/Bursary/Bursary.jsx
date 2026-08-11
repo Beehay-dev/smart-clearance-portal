@@ -5,6 +5,7 @@ import { useAuth } from '../../../contexts/AuthContext';
 import { uploadDocument } from '../../../firebase/storage';
 import { createClearanceRequest, getStudentClearances, getClearanceDocuments } from '../../../firebase/firestore';
 import { toast } from 'react-toastify';
+import { Link } from 'react-router-dom';
 
 const Bursary = () => {
   const { currentUser, userData } = useAuth();
@@ -320,15 +321,15 @@ const Bursary = () => {
                       )}
                     </span>
                     <div className="receipt-actions">
-                      <a 
-                        href={doc.fileUrl}
+                      <Link 
+                        to={doc.fileUrl}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="btn-icon"
                         title="Download"
                       >
                         <FaDownload />
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>

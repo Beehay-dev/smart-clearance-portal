@@ -18,6 +18,7 @@ import {
 } from 'react-icons/fa';
 import './security.css';
 import { toast } from 'react-toastify';
+import { Link } from 'react-router-dom';
 
 const Security = () => {
   const { currentUser, userData } = useAuth();
@@ -418,12 +419,12 @@ const Security = () => {
                         )}
                       </span>
                       <div className="doc-actions">
-                        <a href={doc.fileUrl} target="_blank" rel="noopener noreferrer" className="btn-icon" title="View">
+                        <Link to={doc.fileUrl} target="_blank" rel="noopener noreferrer" className="btn-icon" title="View">
                           <FaEye />
-                        </a>
-                        <a href={doc.fileUrl} download className="btn-icon" title="Download">
+                        </Link>
+                        <Link to={doc.fileUrl} download className="btn-icon" title="Download">
                           <FaDownload />
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </div>

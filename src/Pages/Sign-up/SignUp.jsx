@@ -7,7 +7,6 @@ function SignUp() {
 
     <div className='signUp-container'>
 
-      
       <Register/>
     </div>
   )

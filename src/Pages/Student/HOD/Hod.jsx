@@ -14,6 +14,7 @@ import { useAuth } from '../../../contexts/AuthContext';
 import { uploadDocument } from '../../../firebase/storage';
 import { createClearanceRequest, getStudentClearances, getClearanceDocuments } from '../../../firebase/firestore';
 import { toast } from 'react-toastify';
+import { Link } from 'react-router-dom';
 
 const Hod = () => {
   const { currentUser, userData } = useAuth();
@@ -291,23 +292,23 @@ const Hod = () => {
                       )}
                     </span>
                     <div className="doc-actions">
-                      <a
-                        href={doc.fileUrl}
+                      <Link
+                        to={doc.fileUrl}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="btn-icon"
                         title="View"
                       >
                         <FaEye />
-                      </a>
-                      <a
-                        href={doc.fileUrl}
+                      </Link>
+                      <Link
+                        to={doc.fileUrl}
                         download
                         className="btn-icon"
                         title="Download"
                       >
                         <FaDownload />
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>

@@ -17,10 +17,9 @@ import { useAuth } from '../../../contexts/AuthContext';
 import { uploadDocument } from '../../../firebase/storage';
 import { createClearanceRequest, getStudentClearances, getClearanceDocuments } from '../../../firebase/firestore';
 import { toast } from 'react-toastify';
+import { Link } from 'react-router-dom';
 
-// Keep in sync with whatever Firebase Storage rules actually enforce —
-// this is a UX convenience, not the real security boundary. Matches the
-// same constants used in Bursary.jsx for consistency.
+
 const MAX_FILE_SIZE_BYTES = 10 * 1024 * 1024; // 10MB
 const ALLOWED_MIME_TYPES = ['application/pdf', 'image/jpeg', 'image/jpg', 'image/png'];
 
@@ -367,23 +366,23 @@ const Library = () => {
                         )}
                       </span>
                       <div className="doc-actions">
-                        <a
-                          href={doc.fileUrl}
+                        <Link
+                          to={doc.fileUrl}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="btn-icon"
                           title="View"
                         >
                           <FaEye />
-                        </a>
-                        <a
-                          href={doc.fileUrl}
+                        </Link>
+                        <Link
+                          to={doc.fileUrl}
                           download
                           className="btn-icon"
                           title="Download"
                         >
                           <FaDownload />
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </div>
